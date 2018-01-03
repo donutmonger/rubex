@@ -116,7 +116,7 @@ func (re *Regexp) Free() {
 	}
 }
 
-func (re *Regexp) getNamedGroupInfo() (namedGroupInfo NamedGroupInfo) {
+func (re *Regexp) GetNamedGroupInfo() (namedGroupInfo NamedGroupInfo) {
 	numNamedGroups := int(C.onig_number_of_names(re.regex))
 	//when any named capture exisits, there is no numbered capture even if there are unnamed captures
 	if numNamedGroups > 0 {
