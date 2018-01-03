@@ -65,7 +65,7 @@ func NewRegexp(pattern string, option int) (re *Regexp, err error) {
 		for i := 0; i < numMatchStartSize; i++ {
 			re.matchData.indexes[i] = make([]int32, numCapturesInPattern*2)
 		}
-		re.namedGroupInfo = re.getNamedGroupInfo()
+		re.namedGroupInfo = re.GetNamedGroupInfo()
 		runtime.SetFinalizer(re, (*Regexp).Free)
 	}
 	return re, err
